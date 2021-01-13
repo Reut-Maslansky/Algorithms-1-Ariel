@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class binaryNum {
     public static void main(String[] args) {
-       int x=castNum(8);
+       int x=castNum(0);
         System.out.println(x);
     }
 
