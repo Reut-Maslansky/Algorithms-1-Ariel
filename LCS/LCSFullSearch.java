@@ -3,7 +3,7 @@ package LCS;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class FullSearch {
+public class LCSFullSearch {
 
     public static void main(String[] args) {
         String x = "abcbdab";
