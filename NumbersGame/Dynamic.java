@@ -17,37 +17,37 @@ public class Dynamic {
         System.out.println(Arrays.toString(arr));
         int[][] help = createHelpArr(arr);
         for(int i=0; i<help[0].length; i++){
-            for(int j=0; j<help.length; j++){
-                if(j==0) System.out.println();
-                System.out.print("  "+help[i][j]);
-            }
+            System.out.println(Arrays.toString(help[i]));
         }
         System.out.println();
         System.out.println("the max profit is: "+help[0][arr.length-1]);
 
+        int [] array= createRandomArr(6);
+        System.out.print(Arrays.toString(array)+"\n");
+
+        int[][] helpRand = createHelpArr(array);
+        for(int i=0; i<helpRand[0].length; i++){
+            for(int j=0; j<helpRand.length; j++){
+                if(j==0) System.out.println();
+            }
+            System.out.print(Arrays.toString(helpRand[i]));
+        }
+        System.out.println();
+        System.out.println("\nthe max profit is: "+helpRand[0][array.length-1]);
+    }
+
+    private static int[] createRandomArr(int n) {
         System.out.println("=======================");
         System.out.println("        RANDOM");
         System.out.println("=======================");
         Random rd = new Random();
-        int n = 1;
-        while (n % 2 == 1)
-            n = rd.nextInt(30);
 
         int[] array = new int[n];
 
         for (int i = 0; i < array.length; i++) {
             array[i] = rd.nextInt(20);
         }
-        System.out.println(Arrays.toString(array));
-        int[][] helpRand = createHelpArr(array);
-        for(int i=0; i<helpRand[0].length; i++){
-            for(int j=0; j<helpRand.length; j++){
-                if(j==0) System.out.println();
-                System.out.print("  "+helpRand[i][j]);
-            }
-        }
-        System.out.println();
-        System.out.println("the max profit is: "+helpRand[0][array.length-1]);
+        return array;
     }
 
     static int[][] createHelpArr(int[] origin_arr) {
@@ -61,4 +61,6 @@ public class Dynamic {
         }
             return help;
     }
+
+
 }
