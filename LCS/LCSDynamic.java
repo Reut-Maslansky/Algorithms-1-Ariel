@@ -7,7 +7,7 @@ public class LCSDynamic {
         String y = "bdcaba";
         int wordLen = LCS(x, y);
         String myWord = LCSString(x, y);
-        System.out.println(wordLen+" "+myWord);
+        System.out.println(wordLen + " " + myWord);
     }
 
     public static String LCSString(String x, String y) {
@@ -30,8 +30,11 @@ public class LCSDynamic {
                 myWord = y.charAt(i - 1) + myWord;
                 i--;
                 j--;
-            } else
-                i--;
+            } else {
+                if (helpTable[i - 1][j] != 0)
+                    i--;
+                else j--;
+            }
         }
 
 
