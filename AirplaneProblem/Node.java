@@ -2,7 +2,7 @@ package AirplaneProblem;
 
 import java.util.LinkedList;
 
-public class Node {
+class Node {
     private int right, down, value, countOfPath, valueA, valueB;
     private LinkedList<String> paths;
 
