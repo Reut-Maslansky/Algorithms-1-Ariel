@@ -1,5 +1,7 @@
 package Exams.summer18b;
 
+import java.util.Arrays;
+
 public class q3 {
     public static void main(String[] args) {
         int[][] mat = new int[5][5];
@@ -8,7 +10,13 @@ public class q3 {
         mat[2] = new int[]{1, 1, 1, 1, 0};
         mat[3] = new int[]{0, 1, 1, 1, 1};
         mat[4] = new int[]{0, 0, 1, 1, 1};
-        System.out.println(K_in_One(mat,2));
+
+        int[][] mat1 = new int[3][3];
+        mat1[0] = new int[]{1, 1, 1};
+        mat1[1] = new int[]{1, 1, 1};
+        mat1[2] = new int[]{1, 1, 1};
+
+        System.out.println(K_in_One(mat,3));
 
     }
 
@@ -27,12 +35,11 @@ public class q3 {
                 if (mat[i][j] == 0) {
                     help[i][j] = 0;
                 } else {
-                    int min = Math.min(help[i][j - 1], help[j - 1][i]);
+                    int min = Math.min(help[i][j - 1], help[i - 1][j]);
                     min = Math.min(min, help[i - 1][j - 1]);
                     help[i][j] = min + 1;
                 }
             }
-
         }
         int count = 0;
         for (int i = 0; i < mat.length; i++) {
