@@ -31,7 +31,7 @@ public class LCSDynamic {
                 i--;
                 j--;
             } else {
-                if (helpTable[i - 1][j] != 0)
+                if (helpTable[i - 1][j] > helpTable[i][j - 1])
                     i--;
                 else j--;
             }

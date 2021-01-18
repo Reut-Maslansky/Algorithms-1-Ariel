@@ -16,6 +16,10 @@ public class LISUsedLCS {
 
     public static void main(String[] args) {
         int[] x = {1, 7, 9, 50, 2, 3, 4, 5};
+        int[] arr = {6, 2, 8, 3, 15, 9};
+        System.out.println("==========================");
+        System.out.println("sub arr "+Arrays.toString(usedLCS(arr)));
+        System.out.println("==========================");
         int[] lenPath = usedLCS(x);
         System.out.println(Arrays.toString(lenPath) + " " + lenPath.length);
 
@@ -59,7 +63,7 @@ public class LISUsedLCS {
                 i--;
                 j--;
             } else {
-                if (helpTable[i-1][j] != 0)
+                if (helpTable[i - 1][j] > helpTable[i][j - 1])
                     i--;
                 else j--;
             }
