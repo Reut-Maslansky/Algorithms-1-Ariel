@@ -18,15 +18,21 @@ public class MaxMax1 {
                 if (arr[i] > max1) {
                     max2=max1;
                     max1= arr[i];
+                    if (arr[i + 1] > max2) max2 = arr[i + 1];
                 }
-                if (arr[i + 1] > max2) max2 = arr[i + 1];
+                else {
+                    if (arr[i] > max2) max2 = arr[i];
+                }
             }
             else {
                     if (arr[i+1] > max1) {
                         max2=max1;
                         max1= arr[i+1];
+                        if (arr[i] > max2) max2 = arr[i];
                     }
-                    if (arr[i] > max2) max2 = arr[i];
+                    else {
+                        if (arr[i + 1] > max2) max2 = arr[i + 1];
+                    }
                 }
         }
         if (arr.length % 2 != 0) {
