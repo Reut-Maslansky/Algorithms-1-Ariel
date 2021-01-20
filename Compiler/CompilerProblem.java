@@ -1,12 +1,13 @@
 package Compiler;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 class Program {
     String name;
-    int len,freq;
+    double len,freq;
 
-    public Program(String name, int len, int freq) {
+    public Program(String name, double len, double freq) {
         this.name = name;
         this.len = len;
         this.freq = freq;
@@ -27,7 +28,7 @@ public class CompilerProblem {
         programs[4]=new Program("Roei",24,4);
         programs[5]=new Program("Reut",21, 11);
         getOptimalOrder(programs);
-        Arrays.sort(programs, (o1, o2) -> (o1.freq/o1.len)-(o2.freq/o2.len));
+        Arrays.sort(programs, Comparator.comparingDouble(o -> (1/(o.freq / o.len))));
         System.out.println(Arrays.toString(programs));
         int totalTime = 0;
         int totallen = 0;
