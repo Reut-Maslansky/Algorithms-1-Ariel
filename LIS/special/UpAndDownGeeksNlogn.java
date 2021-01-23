@@ -2,7 +2,7 @@ package LIS.special;
 
 import java.util.Arrays;
 
-public class UpAndDown {
+public class UpAndDownGeeksNlogn {
     public static void main(String[] args) {
         int[] arr = {10, 7, 5, 4, 1, 7, 10, 13, 0};
         System.out.println(getLBSLengthLogn(arr));
