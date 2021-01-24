@@ -43,7 +43,7 @@ public class EqualPlus {
                 if (i == 0 || j == 0 || i == arr.length - 1 || j == arr[0].length - 1) {
                     help[i][j] = arr[i][j];
                 } else {
-                    int min1 = Math.min(up(arr, i, j), down(arr, i, j));
+                    int min1 = up(arr, i, j)+ down(arr, i, j)+left(arr, i, j)+right(arr, i, j);
                     int min2 = Math.min(left(arr, i, j), right(arr, i, j));
                     help[i][j] = 4 * Math.min(min1, min2) + 1;
                 }

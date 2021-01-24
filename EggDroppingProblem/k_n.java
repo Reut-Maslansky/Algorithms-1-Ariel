@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class k_n {
 
     public static void main(String[] args) {
-        System.out.println(numberOfCheckingK(91, 3));
+        System.out.println(numberOfCheckingK(100, 2));
     }
 
     /**
